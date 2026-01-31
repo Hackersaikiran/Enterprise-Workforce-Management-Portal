@@ -2,7 +2,7 @@
 
 A modern, responsive Enterprise Workforce Management Portal built with semantic HTML5, modern CSS3, and minimal JavaScript for theme persistence.
 
-![Enterprise Workforce Management Portal Preview](assets/preview.png)
+![Enterprise Workforce Management Portal Preview](assets/Screenshot%202026-01-31%20195414.png)
 
 ## Features
 
