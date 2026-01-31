@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard - Enterprise Workforce Management Portal">
+  <title>Admin Dashboard | Enterprise WMS</title>
+  <link rel="stylesheet" href="style.css?v=20260131">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <input type="checkbox" id="theme-switch" class="theme-switch" aria-label="Toggle dark mode">
+  <label for="theme-switch" class="theme-toggle">
+    <span class="theme-toggle-slider"></span>
+  </label>
+
+  <!-- Dashboard Layout Grid -->
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo">EW</div>
+        <span>Enterprise WMS</span>
+      </a>
+      
+      <div class="navbar-actions">
+        <!-- Notification Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="notifications-toggle" class="dropdown-toggle">
+          <label for="notifications-toggle" class="notification-icon" title="Notifications">
+            🔔
+            <span class="notification-badge">3</span>
+          </label>
+          <div class="dropdown-menu notifications-dropdown">
+            <div class="dropdown-header">Notifications</div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">New Leave Request</p>
+                <p class="notification-time">2 minutes ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">Project Update</p>
+                <p class="notification-time">1 hour ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">System Maintenance</p>
+                <p class="notification-time">3 hours ago</p>
+              </div>
+            </div>
+            <div class="dropdown-footer">
+              <a href="#all-notifications">View All →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="profile-toggle" class="dropdown-toggle">
+          <label for="profile-toggle" class="profile-avatar" title="Admin User">
+            AU
+          </label>
+          <div class="dropdown-menu profile-dropdown">
+            <div class="profile-header">
+              <div class="profile-avatar-large">AU</div>
+              <div class="profile-info">
+                <p class="profile-name">Admin User</p>
+                <p class="profile-role">Administrator</p>
+              </div>
+            </div>
+            <div class="profile-section">
+              <a href="#profile" class="profile-link">👤 My Profile</a>
+              <a href="#settings" class="profile-link">⚙️ Settings</a>
+              <a href="#activity" class="profile-link">📊 Activity Log</a>
+            </div>
+            <div class="profile-section">
+              <a href="#help" class="profile-link">❓ Help & Support</a>
+              <a href="#docs" class="profile-link">📖 Documentation</a>
+            </div>
+            <div class="profile-footer">
+              <a href="#logout" class="logout-link">🚪 Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar">
+      <nav aria-label="Main Navigation">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="sidebar-link active">
+              <span class="sidebar-icon">📊</span>
+              <span class="sidebar-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="employees.html" class="sidebar-link">
+              <span class="sidebar-icon">👥</span>
+              <span class="sidebar-text">Employees</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects.html" class="sidebar-link">
+              <span class="sidebar-icon">📁</span>
+              <span class="sidebar-text">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html" class="sidebar-link">
+              <span class="sidebar-icon">📅</span>
+              <span class="sidebar-text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link">
+              <span class="sidebar-icon">📈</span>
+              <span class="sidebar-text">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="sidebar-link">
+              <span class="sidebar-icon">⚙️</span>
+              <span class="sidebar-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="main-content">
+      
+      <!-- Dashboard Section (Default) -->
+      <section id="dashboard" class="content-section active">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+          <h1>Dashboard Overview</h1>
+          <p class="dashboard-subtitle">Welcome back! Here's what's happening with your workforce today.</p>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+          <!-- Card 1: Total Employees -->
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Total Employees</span>
+              <div class="card-icon">👥</div>
+            </div>
+            <div class="card-value">1,248</div>
+            <div class="card-change">↑ 12% from last month</div>
+          </article>
+
+          <!-- Card 2: Active Projects -->
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Active Projects</span>
+              <div class="card-icon">📊</div>
+            </div>
+            <div class="card-value">47</div>
+            <div class="card-change">↑ 8% from last month</div>
+          </article>
+
+          <!-- Card 3: Leave Requests -->
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Leave Requests</span>
+              <div class="card-icon">📅</div>
+            </div>
+            <div class="card-value">23</div>
+            <div class="card-change negative">↓ 15% from last month</div>
+          </article>
+
+          <!-- Card 4: Departments -->
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Departments</span>
+              <div class="card-icon">🏢</div>
+            </div>
+            <div class="card-value">12</div>
+            <div class="card-change">No change</div>
+          </article>
+        </section>
+
+        <!-- Employee Table Section -->
+        <section class="table-section">
+          <div class="table-header">
+            <h2>Employee Directory</h2>
+          </div>
+        
+        <div class="table-container">
+          <table class="employee-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Employee Row 1 -->
+              <tr>
+                <td>#EMP001</td>
+                <td>Sarah Chen</td>
+                <td>Senior Software Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp001" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 2 -->
+              <tr>
+                <td>#EMP002</td>
+                <td>Michael Rodriguez</td>
+                <td>Product Manager</td>
+                <td>Product</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp002" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 3 -->
+              <tr>
+                <td>#EMP003</td>
+                <td>Priya Sharma</td>
+                <td>UX Designer</td>
+                <td>Design</td>
+                <td><span class="status-badge on-leave">On Leave</span></td>
+                <td><a href="#modal-emp003" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 4 -->
+              <tr>
+                <td>#EMP004</td>
+                <td>David Kim</td>
+                <td>DevOps Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp004" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 5 -->
+              <tr>
+                <td>#EMP005</td>
+                <td>Emily Watson</td>
+                <td>HR Manager</td>
+                <td>Human Resources</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp005" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 6 -->
+              <tr>
+                <td>#EMP006</td>
+                <td>Ahmed Hassan</td>
+                <td>Data Analyst</td>
+                <td>Analytics</td>
+                <td><span class="status-badge on-leave">On Leave</span></td>
+                <td><a href="#modal-emp006" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 7 -->
+              <tr>
+                <td>#EMP007</td>
+                <td>Lisa Anderson</td>
+                <td>Marketing Director</td>
+                <td>Marketing</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp007" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 8 -->
+              <tr>
+                <td>#EMP008</td>
+                <td>Carlos Martinez</td>
+                <td>Sales Executive</td>
+                <td>Sales</td>
+                <td><span class="status-badge resigned">Resigned</span></td>
+                <td><a href="#modal-emp008" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 9 -->
+              <tr>
+                <td>#EMP009</td>
+                <td>Jennifer Lee</td>
+                <td>QA Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp009" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 10 -->
+              <tr>
+                <td>#EMP010</td>
+                <td>Rahul Verma</td>
+                <td>Backend Developer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp010" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 11 -->
+              <tr>
+                <td>#EMP011</td>
+                <td>Sophie Turner</td>
+                <td>Scrum Master</td>
+                <td>Project Management</td>
+                <td><span class="status-badge on-leave">On Leave</span></td>
+                <td><a href="#modal-emp011" class="action-button">View Profile</a></td>
+              </tr>
+
+              <!-- Employee Row 12 -->
+              <tr>
+                <td>#EMP012</td>
+                <td>James Wilson</td>
+                <td>Security Analyst</td>
+                <td>IT Security</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp012" class="action-button">View Profile</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      </section> <!-- End Dashboard Section -->
+
+    </main>
+  </div>
+
+  <!-- CSS-Only Modal Popups using :target -->
+  
+  <!-- Modal for Employee 1: Sarah Chen -->
+  <div id="modal-emp001" class="modal">
+        <header class="dashboard-header">
+          <h1>Employees Management</h1>
+          <p class="dashboard-subtitle">Manage and monitor all employees in your organization.</p>
+        </header>
+
+        <section class="table-section">
+          <div class="table-header">
+            <h2>Employee Directory</h2>
+          </div>
+          
+          <div class="table-container">
+            <table class="employee-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#EMP001</td>
+                  <td>Sarah Chen</td>
+                  <td>Senior Software Engineer</td>
+                  <td>Engineering</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td><a href="#modal-emp001" class="action-button">View Profile</a></td>
+                </tr>
+                <tr>
+                  <td>#EMP002</td>
+                  <td>Michael Rodriguez</td>
+                  <td>Product Manager</td>
+                  <td>Product</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td><a href="#modal-emp002" class="action-button">View Profile</a></td>
+                </tr>
+                <tr>
+                  <td>#EMP003</td>
+                  <td>Priya Sharma</td>
+                  <td>UX Designer</td>
+                  <td>Design</td>
+                  <td><span class="status-badge on-leave">On Leave</span></td>
+                  <td><a href="#modal-emp003" class="action-button">View Profile</a></td>
+                </tr>
+                <tr>
+                  <td>#EMP005</td>
+                  <td>Emily Watson</td>
+                  <td>HR Manager</td>
+                  <td>Human Resources</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td><a href="#modal-emp005" class="action-button">View Profile</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section> <!-- End Employees Section -->
+
+      <!-- Projects Section -->
+      <section id="projects" class="content-section">
+        <header class="dashboard-header">
+          <h1>Projects</h1>
+          <p class="dashboard-subtitle">Track and manage all active projects.</p>
+        </header>
+
+        <section class="summary-cards">
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Active Projects</span>
+              <div class="card-icon">📁</div>
+            </div>
+            <div class="card-value">47</div>
+            <div class="card-change">↑ 8% from last month</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Completed</span>
+              <div class="card-icon">✅</div>
+            </div>
+            <div class="card-value">156</div>
+            <div class="card-change">↑ 25% from last month</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">On Hold</span>
+              <div class="card-icon">⏸️</div>
+            </div>
+            <div class="card-value">5</div>
+            <div class="card-change">↓ 20% from last month</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Total Clients</span>
+              <div class="card-icon">🤝</div>
+            </div>
+            <div class="card-value">32</div>
+            <div class="card-change">↑ 5% from last month</div>
+          </article>
+        </section>
+
+        <section class="table-section">
+          <div class="table-header">
+            <h2>Project List</h2>
+          </div>
+          <div class="table-container">
+            <table class="employee-table">
+              <thead>
+                <tr>
+                  <th>Project ID</th>
+                  <th>Project Name</th>
+                  <th>Client</th>
+                  <th>Progress</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#PRJ001</td>
+                  <td>ERP System Upgrade</td>
+                  <td>TechCorp Industries</td>
+                  <td>75%</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>#PRJ002</td>
+                  <td>Mobile App Development</td>
+                  <td>Global Solutions Ltd</td>
+                  <td>45%</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>#PRJ003</td>
+                  <td>Data Migration Project</td>
+                  <td>Innovation Labs</td>
+                  <td>100%</td>
+                  <td><span class="status-badge resigned">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section> <!-- End Projects Section -->
+
+      <!-- Calendar Section -->
+      <section id="calendar" class="content-section">
+        <header class="dashboard-header">
+          <h1>Calendar & Events</h1>
+          <p class="dashboard-subtitle">View upcoming events and schedule activities.</p>
+        </header>
+
+        <section class="summary-cards">
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Today's Events</span>
+              <div class="card-icon">📅</div>
+            </div>
+            <div class="card-value">4</div>
+            <div class="card-change">Team Standup at 10 AM</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">This Week</span>
+              <div class="card-icon">📆</div>
+            </div>
+            <div class="card-value">12</div>
+            <div class="card-change">3 meetings scheduled</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">This Month</span>
+              <div class="card-icon">🗓️</div>
+            </div>
+            <div class="card-value">38</div>
+            <div class="card-change">Upcoming deadlines</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Pending Reviews</span>
+              <div class="card-icon">✏️</div>
+            </div>
+            <div class="card-value">7</div>
+            <div class="card-change">Due by end of week</div>
+          </article>
+        </section>
+
+        <section class="table-section">
+          <div class="table-header">
+            <h2>Upcoming Events</h2>
+          </div>
+          <div class="table-container">
+            <table class="employee-table">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Team Standup</td>
+                  <td>Jan 31, 2026</td>
+                  <td>10:00 AM</td>
+                  <td>Meeting</td>
+                  <td><span class="status-badge active">Today</span></td>
+                </tr>
+                <tr>
+                  <td>Project Review</td>
+                  <td>Feb 2, 2026</td>
+                  <td>2:00 PM</td>
+                  <td>Review</td>
+                  <td><span class="status-badge on-leave">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Budget Planning</td>
+                  <td>Feb 5, 2026</td>
+                  <td>11:00 AM</td>
+                  <td>Planning</td>
+                  <td><span class="status-badge on-leave">Upcoming</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section> <!-- End Calendar Section -->
+
+      <!-- Reports Section -->
+      <section id="reports" class="content-section">
+        <header class="dashboard-header">
+          <h1>Reports</h1>
+          <p class="dashboard-subtitle">View detailed analytics and performance reports.</p>
+        </header>
+
+        <section class="summary-cards">
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Employee Productivity</span>
+              <div class="card-icon">📊</div>
+            </div>
+            <div class="card-value">87%</div>
+            <div class="card-change">↑ 5% this quarter</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Project Success Rate</span>
+              <div class="card-icon">🎯</div>
+            </div>
+            <div class="card-value">92%</div>
+            <div class="card-change">↑ 3% this quarter</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Client Satisfaction</span>
+              <div class="card-icon">⭐</div>
+            </div>
+            <div class="card-value">4.7/5</div>
+            <div class="card-change">↑ 0.2 points</div>
+          </article>
+          <article class="summary-card">
+            <div class="card-header">
+              <span class="card-title">Resource Utilization</span>
+              <div class="card-icon">⚙️</div>
+            </div>
+            <div class="card-value">78%</div>
+            <div class="card-change">↑ 8% from last month</div>
+          </article>
+        </section>
+
+        <section class="table-section">
+          <div class="table-header">
+            <h2>Recent Reports</h2>
+          </div>
+          <div class="table-container">
+            <table class="employee-table">
+              <thead>
+                <tr>
+                  <th>Report Name</th>
+                  <th>Generated</th>
+                  <th>Period</th>
+                  <th>Type</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Monthly Performance Report</td>
+                  <td>Jan 30, 2026</td>
+                  <td>January 2026</td>
+                  <td>Performance</td>
+                  <td><a href="#" class="action-button">Download</a></td>
+                </tr>
+                <tr>
+                  <td>Employee Engagement Survey</td>
+                  <td>Jan 28, 2026</td>
+                  <td>Q4 2025</td>
+                  <td>Survey</td>
+                  <td><a href="#" class="action-button">View</a></td>
+                </tr>
+                <tr>
+                  <td>Project Delivery Analysis</td>
+                  <td>Jan 25, 2026</td>
+                  <td>January 2026</td>
+                  <td>Analysis</td>
+                  <td><a href="#" class="action-button">Export</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section> <!-- End Reports Section -->
+
+      <!-- Settings Section -->
+      <section id="settings" class="content-section">
+        <header class="dashboard-header">
+          <h1>Settings</h1>
+          <p class="dashboard-subtitle">Manage system configuration and preferences.</p>
+        </header>
+
+        <section class="settings-container">
+          <article class="settings-card">
+            <div class="settings-header">
+              <h3>System Settings</h3>
+              <p>Configure general system behavior and features</p>
+            </div>
+            <div class="settings-items">
+              <div class="settings-item">
+                <span>System Notifications</span>
+                <span class="settings-toggle">🔔 Enabled</span>
+              </div>
+              <div class="settings-item">
+                <span>Auto-backup</span>
+                <span class="settings-toggle">✓ Daily at 2 AM</span>
+              </div>
+              <div class="settings-item">
+                <span>Maintenance Mode</span>
+                <span class="settings-toggle">⊘ Disabled</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card">
+            <div class="settings-header">
+              <h3>Security Settings</h3>
+              <p>Manage security and access control</p>
+            </div>
+            <div class="settings-items">
+              <div class="settings-item">
+                <span>Two-Factor Authentication</span>
+                <span class="settings-toggle">✓ Enabled</span>
+              </div>
+              <div class="settings-item">
+                <span>Session Timeout</span>
+                <span class="settings-toggle">30 minutes</span>
+              </div>
+              <div class="settings-item">
+                <span>IP Whitelist</span>
+                <span class="settings-toggle">✓ Active</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card">
+            <div class="settings-header">
+              <h3>User Preferences</h3>
+              <p>Customize your user experience</p>
+            </div>
+            <div class="settings-items">
+              <div class="settings-item">
+                <span>Theme</span>
+                <span class="settings-toggle">Light / Dark</span>
+              </div>
+              <div class="settings-item">
+                <span>Email Notifications</span>
+                <span class="settings-toggle">✓ Enabled</span>
+              </div>
+              <div class="settings-item">
+                <span>Language</span>
+                <span class="settings-toggle">English (US)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card">
+            <div class="settings-header">
+              <h3>Data Management</h3>
+              <p>Manage your data and exports</p>
+            </div>
+            <div class="settings-items">
+              <div class="settings-item">
+                <span>Export Data</span>
+                <span class="settings-toggle">CSV, JSON, XML</span>
+              </div>
+              <div class="settings-item">
+                <span>Data Retention</span>
+                <span class="settings-toggle">7 years</span>
+              </div>
+              <div class="settings-item">
+                <span>Compliance Reports</span>
+                <span class="settings-toggle">GDPR, HIPAA</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section> <!-- End Settings Section -->
+
+    </main>
+  </div>
+
+  <!-- CSS-Only Modal Popups using :target -->
+  
+  <!-- Modal for Employee 1: Sarah Chen -->
+  <div id="modal-emp001" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP001</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Sarah Chen</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Senior Software Engineer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Engineering</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">sarah.chen@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 123-4567</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">March 15, 2022</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">John Smith (Engineering Manager)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Python, JavaScript, React, Node.js, AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Employee 2: Michael Rodriguez -->
+  <div id="modal-emp002" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP002</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Michael Rodriguez</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Product Manager</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Product</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">michael.rodriguez@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 234-5678</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">January 10, 2021</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">Emma Davis (VP of Product)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Product Strategy, Agile, UX Research, Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Employee 3: Priya Sharma -->
+  <div id="modal-emp003" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP003</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Priya Sharma</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">UX Designer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Design</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">priya.sharma@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 345-6789</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">July 22, 2023</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge on-leave">On Leave</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Leave Dates:</span>
+            <span class="info-value">Jan 29 - Feb 5, 2026</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">Alex Johnson (Design Lead)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Figma, Adobe XD, User Research, Prototyping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Employee 4: David Kim -->
+  <div id="modal-emp004" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP004</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">David Kim</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">DevOps Engineer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Engineering</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">david.kim@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 456-7890</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">September 5, 2020</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">Robert Chen (Infrastructure Lead)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Docker, Kubernetes, Jenkins, AWS, Terraform</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Employee 5: Emily Watson -->
+  <div id="modal-emp005" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP005</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Emily Watson</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">HR Manager</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Human Resources</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">emily.watson@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 567-8901</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">February 14, 2019</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">Patricia Green (VP of HR)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Talent Management, Recruitment, Employee Relations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Employee 6: Ahmed Hassan -->
+  <div id="modal-emp006" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP006</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Ahmed Hassan</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Data Analyst</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Analytics</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">ahmed.hassan@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 678-9012</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">May 8, 2022</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge on-leave">On Leave</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Leave Dates:</span>
+            <span class="info-value">Jan 28 - Feb 3, 2026</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">Michelle Lee (Analytics Manager)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">SQL, Python, Tableau, Power BI, Statistics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional modals for remaining employees would follow the same pattern -->
+  <!-- For brevity, implementing modals for the most relevant examples -->
+
+  <!-- Modal for Employee 8: Carlos Martinez (Resigned) -->
+  <div id="modal-emp008" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP008</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Carlos Martinez</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Sales Executive</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Sales</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">carlos.martinez@enterprise.com (Deactivated)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">N/A</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">November 12, 2021</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Resignation Date:</span>
+            <span class="info-value">January 15, 2026</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge resigned">Resigned</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reason:</span>
+            <span class="info-value">Career Opportunity - Relocated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generic modals for remaining employees -->
+  <div id="modal-emp007" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Lisa Anderson</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP007</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Marketing Director</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp009" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Jennifer Lee</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP009</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">QA Engineer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp010" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Rahul Verma</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP010</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Backend Developer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp011" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Sophie Turner</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP011</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Scrum Master</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge on-leave">On Leave</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp012" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - James Wilson</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP012</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Security Analyst</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="theme.js"></script>
+</body>
+</html>

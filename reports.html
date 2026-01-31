@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reports - Enterprise Workforce Management Portal">
+  <title>Reports | Enterprise WMS</title>
+  <link rel="stylesheet" href="style.css?v=20260131">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <input type="checkbox" id="theme-switch" class="theme-switch" aria-label="Toggle dark mode">
+  <label for="theme-switch" class="theme-toggle">
+    <span class="theme-toggle-slider"></span>
+  </label>
+
+  <!-- Dashboard Layout Grid -->
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo">EW</div>
+        <span>Enterprise WMS</span>
+      </a>
+      
+      <div class="navbar-actions">
+        <!-- Notification Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="notifications-toggle" class="dropdown-toggle">
+          <label for="notifications-toggle" class="notification-icon" title="Notifications">
+            🔔
+            <span class="notification-badge">3</span>
+          </label>
+          <div class="dropdown-menu notifications-dropdown">
+            <div class="dropdown-header">Notifications</div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">New Leave Request</p>
+                <p class="notification-time">2 minutes ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">Project Update</p>
+                <p class="notification-time">1 hour ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">System Maintenance</p>
+                <p class="notification-time">3 hours ago</p>
+              </div>
+            </div>
+            <div class="dropdown-footer">
+              <a href="#all-notifications">View All →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="profile-toggle" class="dropdown-toggle">
+          <label for="profile-toggle" class="profile-avatar" title="Admin User">
+            AU
+          </label>
+          <div class="dropdown-menu profile-dropdown">
+            <div class="profile-header">
+              <div class="profile-avatar-large">AU</div>
+              <div class="profile-info">
+                <p class="profile-name">Admin User</p>
+                <p class="profile-role">Administrator</p>
+              </div>
+            </div>
+            <div class="profile-section">
+              <a href="#profile" class="profile-link">👤 My Profile</a>
+              <a href="#settings" class="profile-link">⚙️ Settings</a>
+              <a href="#activity" class="profile-link">📊 Activity Log</a>
+            </div>
+            <div class="profile-section">
+              <a href="#help" class="profile-link">❓ Help & Support</a>
+              <a href="#docs" class="profile-link">📖 Documentation</a>
+            </div>
+            <div class="profile-footer">
+              <a href="#logout" class="logout-link">🚪 Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar">
+      <nav aria-label="Main Navigation">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="sidebar-link">
+              <span class="sidebar-icon">📊</span>
+              <span class="sidebar-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="employees.html" class="sidebar-link">
+              <span class="sidebar-icon">👥</span>
+              <span class="sidebar-text">Employees</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects.html" class="sidebar-link">
+              <span class="sidebar-icon">📁</span>
+              <span class="sidebar-text">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html" class="sidebar-link">
+              <span class="sidebar-icon">📅</span>
+              <span class="sidebar-text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link active">
+              <span class="sidebar-icon">📈</span>
+              <span class="sidebar-text">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="sidebar-link">
+              <span class="sidebar-icon">⚙️</span>
+              <span class="sidebar-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h1>Reports</h1>
+        <p class="dashboard-subtitle">View detailed analytics and performance reports.</p>
+      </header>
+
+      <section class="summary-cards">
+        <article class="summary-card">
+          <div class="card-header">
+            <span class="card-title">Employee Productivity</span>
+            <div class="card-icon">📊</div>
+          </div>
+          <div class="card-value">87%</div>
+          <div class="card-change">↑ 5% this quarter</div>
+        </article>
+        <article class="summary-card">
+          <div class="card-header">
+            <span class="card-title">Project Success Rate</span>
+            <div class="card-icon">🎯</div>
+          </div>
+          <div class="card-value">92%</div>
+          <div class="card-change">↑ 3% this quarter</div>
+        </article>
+        <article class="summary-card">
+          <div class="card-header">
+            <span class="card-title">Client Satisfaction</span>
+            <div class="card-icon">⭐</div>
+          </div>
+          <div class="card-value">4.7/5</div>
+          <div class="card-change">↑ 0.2 points</div>
+        </article>
+        <article class="summary-card">
+          <div class="card-header">
+            <span class="card-title">Resource Utilization</span>
+            <div class="card-icon">⚙️</div>
+          </div>
+          <div class="card-value">78%</div>
+          <div class="card-change">↑ 8% from last month</div>
+        </article>
+      </section>
+
+      <section class="table-section">
+        <div class="table-header">
+          <h2>Recent Reports</h2>
+        </div>
+        <div class="table-container">
+          <table class="employee-table">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th>Generated</th>
+                <th>Period</th>
+                <th>Type</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly Performance Report</td>
+                <td>Jan 30, 2026</td>
+                <td>January 2026</td>
+                <td>Performance</td>
+                <td><a href="#" class="action-button">Download</a></td>
+              </tr>
+              <tr>
+                <td>Employee Engagement Survey</td>
+                <td>Jan 28, 2026</td>
+                <td>Q4 2025</td>
+                <td>Survey</td>
+                <td><a href="#" class="action-button">View</a></td>
+              </tr>
+              <tr>
+                <td>Project Delivery Analysis</td>
+                <td>Jan 25, 2026</td>
+                <td>January 2026</td>
+                <td>Analysis</td>
+                <td><a href="#" class="action-button">Export</a></td>
+              </tr>
+              <tr>
+                <td>Resource Allocation Report</td>
+                <td>Jan 22, 2026</td>
+                <td>January 2026</td>
+                <td>Resource</td>
+                <td><a href="#" class="action-button">Download</a></td>
+              </tr>
+              <tr>
+                <td>Quarterly Business Review</td>
+                <td>Jan 20, 2026</td>
+                <td>Q4 2025</td>
+                <td>Business</td>
+                <td><a href="#" class="action-button">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="theme.js"></script>
+</body>
+</html>

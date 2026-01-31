@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Employees - Enterprise Workforce Management Portal">
+  <title>Employees | Enterprise WMS</title>
+  <link rel="stylesheet" href="style.css?v=20260131">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <input type="checkbox" id="theme-switch" class="theme-switch" aria-label="Toggle dark mode">
+  <label for="theme-switch" class="theme-toggle">
+    <span class="theme-toggle-slider"></span>
+  </label>
+
+  <!-- Dashboard Layout Grid -->
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo">EW</div>
+        <span>Enterprise WMS</span>
+      </a>
+      
+      <div class="navbar-actions">
+        <!-- Notification Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="notifications-toggle" class="dropdown-toggle">
+          <label for="notifications-toggle" class="notification-icon" title="Notifications">
+            🔔
+            <span class="notification-badge">3</span>
+          </label>
+          <div class="dropdown-menu notifications-dropdown">
+            <div class="dropdown-header">Notifications</div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">New Leave Request</p>
+                <p class="notification-time">2 minutes ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">Project Update</p>
+                <p class="notification-time">1 hour ago</p>
+              </div>
+            </div>
+            <div class="notification-item">
+              <div class="notification-dot"></div>
+              <div class="notification-content">
+                <p class="notification-title">System Maintenance</p>
+                <p class="notification-time">3 hours ago</p>
+              </div>
+            </div>
+            <div class="dropdown-footer">
+              <a href="#all-notifications">View All →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown-container">
+          <input type="checkbox" id="profile-toggle" class="dropdown-toggle">
+          <label for="profile-toggle" class="profile-avatar" title="Admin User">
+            AU
+          </label>
+          <div class="dropdown-menu profile-dropdown">
+            <div class="profile-header">
+              <div class="profile-avatar-large">AU</div>
+              <div class="profile-info">
+                <p class="profile-name">Admin User</p>
+                <p class="profile-role">Administrator</p>
+              </div>
+            </div>
+            <div class="profile-section">
+              <a href="#profile" class="profile-link">👤 My Profile</a>
+              <a href="#settings" class="profile-link">⚙️ Settings</a>
+              <a href="#activity" class="profile-link">📊 Activity Log</a>
+            </div>
+            <div class="profile-section">
+              <a href="#help" class="profile-link">❓ Help & Support</a>
+              <a href="#docs" class="profile-link">📖 Documentation</a>
+            </div>
+            <div class="profile-footer">
+              <a href="#logout" class="logout-link">🚪 Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar">
+      <nav aria-label="Main Navigation">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="sidebar-link">
+              <span class="sidebar-icon">📊</span>
+              <span class="sidebar-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="employees.html" class="sidebar-link active">
+              <span class="sidebar-icon">👥</span>
+              <span class="sidebar-text">Employees</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects.html" class="sidebar-link">
+              <span class="sidebar-icon">📁</span>
+              <span class="sidebar-text">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html" class="sidebar-link">
+              <span class="sidebar-icon">📅</span>
+              <span class="sidebar-text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link">
+              <span class="sidebar-icon">📈</span>
+              <span class="sidebar-text">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="sidebar-link">
+              <span class="sidebar-icon">⚙️</span>
+              <span class="sidebar-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h1>Employees Management</h1>
+        <p class="dashboard-subtitle">Manage and monitor all employees in your organization.</p>
+      </header>
+
+      <section class="table-section">
+        <div class="table-header">
+          <h2>Employee Directory</h2>
+        </div>
+        
+        <div class="table-container">
+          <table class="employee-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#EMP001</td>
+                <td>Sarah Chen</td>
+                <td>Senior Software Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp001" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP002</td>
+                <td>Michael Rodriguez</td>
+                <td>Product Manager</td>
+                <td>Product</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp002" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP003</td>
+                <td>Priya Sharma</td>
+                <td>UX Designer</td>
+                <td>Design</td>
+                <td><span class="status-badge on-leave">On Leave</span></td>
+                <td><a href="#modal-emp003" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP004</td>
+                <td>David Kim</td>
+                <td>DevOps Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp004" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP005</td>
+                <td>Emily Watson</td>
+                <td>HR Manager</td>
+                <td>Human Resources</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp005" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP006</td>
+                <td>Ahmed Hassan</td>
+                <td>Data Analyst</td>
+                <td>Analytics</td>
+                <td><span class="status-badge on-leave">On Leave</span></td>
+                <td><a href="#modal-emp006" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP007</td>
+                <td>Lisa Anderson</td>
+                <td>Marketing Director</td>
+                <td>Marketing</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp007" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP008</td>
+                <td>Carlos Martinez</td>
+                <td>Sales Executive</td>
+                <td>Sales</td>
+                <td><span class="status-badge resigned">Resigned</span></td>
+                <td><a href="#modal-emp008" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP009</td>
+                <td>Jennifer Lee</td>
+                <td>QA Engineer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp009" class="action-button">View Profile</a></td>
+              </tr>
+              <tr>
+                <td>#EMP010</td>
+                <td>Rahul Verma</td>
+                <td>Backend Developer</td>
+                <td>Engineering</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td><a href="#modal-emp010" class="action-button">View Profile</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modals (Sample for emp001) -->
+  <div id="modal-emp001" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP001</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Sarah Chen</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Senior Software Engineer</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Engineering</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">sarah.chen@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Phone:</span>
+            <span class="info-value">+1 (555) 123-4567</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Join Date:</span>
+            <span class="info-value">March 15, 2022</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Reports To:</span>
+            <span class="info-value">John Smith (Engineering Manager)</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Skills:</span>
+            <span class="info-value">Python, JavaScript, React, Node.js, AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp002" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Employee ID:</span>
+            <span class="info-value">#EMP002</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Full Name:</span>
+            <span class="info-value">Michael Rodriguez</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Role:</span>
+            <span class="info-value">Product Manager</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Department:</span>
+            <span class="info-value">Product</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Email:</span>
+            <span class="info-value">michael.rodriguez@enterprise.com</span>
+          </div>
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp003" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Priya Sharma</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge on-leave">On Leave</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp004" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - David Kim</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp005" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Emily Watson</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp006" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Ahmed Hassan</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge on-leave">On Leave</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp007" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Lisa Anderson</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp008" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Carlos Martinez</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge resigned">Resigned</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp009" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Jennifer Lee</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-emp010" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Employee Profile - Rahul Verma</h2>
+        <a href="#" class="modal-close" title="Close">×</a>
+      </div>
+      <div class="modal-body">
+        <div class="profile-info">
+          <div class="info-group">
+            <span class="info-label">Status:</span>
+            <span class="info-value"><span class="status-badge active">Active</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="theme.js"></script>
+</body>
+</html>
